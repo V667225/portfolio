@@ -1,0 +1,395 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background: radial-gradient(circle at top right, #1e293b, #0f172a 50%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+/* Navigation */
+/* --- Colorful Navigation Links --- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(15, 23, 42, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 2rem;
+ }
+nav a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* This creates the gradient text effect */
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    transition: all 0.3s ease;
+    position: relative;
+}
+nav a:hover { 
+transform: translateY(-2px);
+    /* Subtle glow around the text on hover */
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));transform: translateY(-2px);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #38bdf8, #ec4899);
+    box-shadow: 0 0 10px #38bdf8;
+    transition: width 0.3s ease;
+}
+
+/* Make the logo stand out with a specific neon color */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px #38bdf8;
+}
+
+.logo b {
+    color: #ec4899;
+    text-shadow: 0 0 10px #ec4899;
+}
+
+
+.pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Prevents the image from stretching */
+    border-radius: 50%; /* Makes it a perfect circle */
+    border: 3px solid var(--accent); /* Adds a themed border */
+}
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 { 
+    font-size: 4rem;
+    margin-bottom: 1rem; }
+.highlight { 
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(24, 231, 134, 0.5);
+ }
+.hero p { 
+    font-size: 1.25rem; 
+    color: var(--text-secondary);
+     max-width: 600px; 
+     margin: 0 auto 2rem; }
+
+/* Buttons */
+.btn-primary {
+    background: var(--accent);
+    color: #000;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.btn-secondary {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Grid & Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    background: rgba(30, 41, 59, 0.7); /* Translucent background */
+    backdrop-filter: blur(10px);        /* This creates the frosted effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+/* --- Neon Appearance --- */
+
+/* The glowing text effect */
+.neon-text {
+    color: #00f3ff;
+    text-shadow: 
+        0 0 5px #00f3ff,
+        0 0 10px #00f3ff,
+        0 0 20px #00f3ff;
+    font-weight: bold;
+}
+
+/* The glowing box effect */
+.neon-box {
+    padding: 3rem;
+    background: rgba(15, 23, 42, 0.8); /* Semi-transparent background */
+    border: 2px solid #00f3ff;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    /* This creates the outer glow for the whole section */
+    box-shadow: 
+        0 0 10px rgba(0, 243, 255, 0.3),
+        inset 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+/* Optional: Add a subtle pulsing animation to the neon */
+@keyframes neon-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.neon-text {
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* --- Collaboration Card Styling --- */
+
+.contact-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a colorful glow behind the card */
+.contact-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.neon-text-purple {
+    color: #a78bfa;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Colorful Input Boxes --- */
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.colorful-form input, 
+.colorful-form textarea {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* The magic colorful border on focus */
+.colorful-form input:focus, 
+.colorful-form textarea:focus {
+    outline: none;
+    border-color: transparent;
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.input-group .bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6, #ec4899);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.input-group input:focus ~ .bar,
+.input-group textarea:focus ~ .bar {
+    width: 100%;
+}
+
+/* --- Gradient Button --- */
+
+.btn-gradient {
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* --- Social Grid Styling --- */
+.social-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.social-card {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-card h3 {
+    color: white;
+    margin: 10px 0 5px;
+}
+
+.social-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* --- Specific Brand Colors & Glows --- */
+
+.linkedin:hover { 
+    border-color: #0077b5; 
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.4); 
+    transform: translateY(-10px);
+}
+.linkedin .icon { background: #0077b5; color: white; }
+
+.github:hover { 
+    border-color: #f0f6fc; 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); 
+    transform: translateY(-10px);
+}
+.github .icon { background: #333; color: white; }
+
+.whatsapp:hover { 
+    border-color: #25d366; 
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); 
+    transform: translateY(-10px);
+}
+.whatsapp .icon { 
+    background: #25d366; 
+    color: white; 
+}
+
+.instagram:hover { 
+    border-color: #e1306c; 
+    box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); 
+    transform: translateY(-10px);
+
+}
+.instagram .icon { 
+    background: linear-gradient(45deg, #f09433, #e1306c, #bc1888); 
+    color: white; 
+}
